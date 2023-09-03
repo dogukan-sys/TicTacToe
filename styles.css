@@ -1,26 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;700;1000&display=swap');
+
 :root {
-  --border: 1px solid #868686;
+  --border: 2px solid #70416D;
+  --bg: #F5ECEB; 
+  --fg: #FFD4E6; 
+  --text: #70416D;
+--accent: #ff85a232; 
+}
+
+*{
+  font-family: 'Mulish', sans-serif;
+  transition: 0.2s ease-in-out;
+  color: var(--text); 
 }
 html, body {
   margin: 0;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  background-color: var(--bg);
 }
 
 /* Gameboard Design */
 main {
+  margin-top: 100px;
+  margin-bottom: 30vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.scoreboard{
+  display: flex;
+  gap: 20rem;
+}
+.score {
+  font-size: 42px;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.info {
+  font-size: 30px;
+  font-style: italic;
+  padding: 1rem;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 70px);
-  margin: 20px auto;
+  grid-template-columns: repeat(3, 200px);
+  margin-top: 100px;
 }
 .cell {
-  width: 70px;
-  height: 70px;
-  font-size: 24px;
+  width: 200px;
+  height: 200px;
+  font-size: 48px;
+  font-weight: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
