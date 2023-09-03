@@ -2,9 +2,11 @@ const gameboard = (() => {
   const turnInfo = document.querySelector('#turnInfo')
   const p1Score = document.querySelector('#p1Score')
   const p2Score = document.querySelector('#p2Score')
+  const reset = document.querySelector('#reset')
   const playerFactory = (player, mark, turn, board, wins) => {
     return {player, mark, turn, board, wins} 
   }
+  
   // Default Setup
   const player1 = playerFactory(0, 'X', true, [], 0);
   const player2 =  playerFactory(1, 'O', false, [], 0);
@@ -43,7 +45,6 @@ const gameboard = (() => {
         gameCheck()
       })
     });
-
     gameCheck = () => {
       for (const combo of winCombos) {
         if (combo.every(num => player1.board.includes(num))) {
@@ -82,5 +83,20 @@ const gameboard = (() => {
       p1Score.textContent = `X - ${player1.wins}`
       p2Score.textContent = `O - ${player2.wins}`
     }
+    reset.addEventListener('click', () => {
+      turnInfo.textContent = 'X Turn'
+      player1.board = []
+      player2.board = []
+      player1.turn = true
+      player2.turn = false
+      player1.wins = 0
+      player2.wins = 0
+      gameTurn = 0
+      winner = null
+      updateScore()
+      cells.forEach(cell => {
+        cell.textContent = ''
+      })
+    })
   })();
 })();

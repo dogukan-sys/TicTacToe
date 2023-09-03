@@ -39,30 +39,31 @@ main {
 }
 .score {
   font-size: 42px;
-  padding: 1rem;
   border-radius: 20px;
 }
 
 .info {
   font-size: 30px;
   font-style: italic;
-  padding: 1rem;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 200px);
-  margin-top: 100px;
+  margin-top: 10px;
 }
 .cell {
   width: 200px;
   height: 200px;
   font-size: 48px;
-  font-weight: 1000;
+  font-weight: 1000; 
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.cell:hover{
+  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22), 0 5px 14px 0 rgba(0, 0, 0, .18);
 }
 
 .cell:nth-child(-n+3) {
@@ -81,4 +82,18 @@ main {
   border-top: var(--border);
 }
 
-/*  */
+button{
+  box-shadow: 0 5px 7px rgb(0 0 0 / 5%) ;
+  padding: 1rem;
+  font-size: 16px;
+  background-color: var(--bg);
+  border: none;
+  border-radius: 5px;
+
+}
+
+button:hover{
+  transform: translateY(-0.025rem);
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.12);
+}
