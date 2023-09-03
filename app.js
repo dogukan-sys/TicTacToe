@@ -38,7 +38,7 @@ const gameboard = (() => {
           player1.turn = true
           player2.turn = false
           turnInfo.textContent = 'X Turn'
-        }
+        } else {return}
         gameTurn++
         gameCheck()
       })
