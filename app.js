@@ -59,13 +59,14 @@ const gameboard = (() => {
             updateScore()
             gameReset()
         } else if (gameTurn == 9) {
-            winner = 'Tie'
+            winner = 'No one'
             gameReset()
         }
       }
     }
 
     gameReset = () => {
+      (winner == 'No one') ? turnInfo.textContent = 'I\'ts a Tie!': turnInfo.textContent = `${winner.mark} won!`
       player1.board = []
       player2.board = []
       player1.turn = true
@@ -78,8 +79,8 @@ const gameboard = (() => {
     }
 
     updateScore = () => {
-      p1Score.textContent = `X = ${player1.wins}`
-      p2Score.textContent = `O = ${player2.wins}`
+      p1Score.textContent = `X - ${player1.wins}`
+      p2Score.textContent = `O - ${player2.wins}`
     }
   })();
 })();
