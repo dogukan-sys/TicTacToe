@@ -42,6 +42,7 @@ const gameboard = (() => {
   });
   })();
 
+
   const gameCheck = () => {
     for (const combo of winCombos) {
       if (combo.every(num => player1.board.includes(num))) {
@@ -56,6 +57,14 @@ const gameboard = (() => {
           winner = 'Tie'
       }
     }
+  }
 
+  const gameReset = () => {
+    player1.board = []
+    player2.board = []
+    player1.turn = true
+    player2.turn = false
+    let gameTurn = 0
+    let winner= null
   }
 })();
